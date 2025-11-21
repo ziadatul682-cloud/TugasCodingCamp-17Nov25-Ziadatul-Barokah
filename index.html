@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>PT Atma Wijaya</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <nav class="navbar">
@@ -22,8 +22,7 @@
     </ul>
 
     <div class="nav-actions">
-      <button id="mode-toggle" class="mode-btn" aria-label="Toggle theme">🌓</button>
-    </div>
+      <button id="login-btn" class="mode-btn" aria-label="Open login">Login</button>    </div>
   </nav>
 
   <!-- HERO -->
@@ -169,6 +168,35 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <!-- Modal for article -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-panel">
+      <button id="modal-close" class="modal-close" aria-label="Close">✕</button>
+      <h3 id="modal-title"></h3>
+      <p id="modal-body"></p>
+    </div>
+  </div>
+
+  <!-- Login modal (simple, Firebase-ready) -->
+  <div id="login-modal" class="modal" aria-hidden="true">
+    <div class="modal-panel">
+      <button id="login-close" class="modal-close">✕</button>
+      <h3>Login</h3>
+
+      <form id="login-form">
+        <label>Email</label>
+        <input id="login-email" type="email" required />
+        <label>Password</label>
+        <input id="login-pass" type="password" required />
+        <div style="display:flex;gap:8px;margin-top:12px">
+          <button type="submit" class="btn primary">Login</button>
+          <button type="button" id="login-anon" class="btn ghost">Demo</button>
+        </div>
+        <p style="margin-top:10px;font-size:13px;color:#4b5563">*This form works with Firebase if firebase.js is connected. Otherwise demo sets localStorage.</p>
+      </form>
+    </div>
+  </div>
+
+  <script src="Js/script.js"></script>
 </body>
 </html>
